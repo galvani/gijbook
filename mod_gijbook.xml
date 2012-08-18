@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade" client="site">
+	<name>GIJBook - SN Connector</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>September 2012</creationDate>
+	<author>Jan Kozak</author>
+	<authorEmail>galvani78@gmail.com</authorEmail>
+	<authorUrl>http://www.galvani.cz</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is recorded in the components table -->
+	<version>0.0.20</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>Enables social network authentication and registration</description>
+ 
+ 	<!--
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	-->
+ 
+ 
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files>
+		<filename module="mod_gijbook">mod_gijbook.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>index.html</filename>
+		<filename>mod_gijbook.xml</filename>
+		<folder>app</folder>
+		<folder>model</folder>
+		<folder>tmpl</folder>
+	</files>
+ 
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>GIJBook admin</menu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>mod_gijbook.php</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+		</files>
+	</administration>
+ 
+ <!-- Optional parameters -->
+	<config>
+            <fields name="params">
+                <fieldset name="basic">
+                    <field 
+                        name="moduleclass_sfx" 
+                        type="text" 
+                        default="" 
+                        label="LABEL_CLASS_SUFFIX" 
+                        description="DESC_MOD_SUFFIX">
+                    </field>
+                     <field 
+                        name="@spacer" 
+                        type="spacer" 
+                        default="" 
+                        label="" 
+                        description="">
+                    </field>
+                     <field 
+                        name="snType" 
+                        type="text" 
+                        default="5" 
+                        label="LABEL_USER_COUNT" 
+                        description="DESC_USER_COUNT">
+                    </field>
+                </fieldset>
+            </fields>
+    </config>
+ 
+</extension>
